@@ -41,16 +41,16 @@
       <div class="row mb-default" v-if="type === 'appointment'">
         <div class="col-sm-3">Заявка является возвратом?</div>
         <div class="col-sm-1">
-          <div class="d-flex"><span>Да</span><b-radio v-model="model.it_return" :value="true" :disabled="is_details"></b-radio></div>
+          <div class="d-flex"><span>Да</span><b-radio v-model="model.it_return" :value="true" :disabled="!is_edit_mode"></b-radio></div>
         </div>
         <div class="col-sm-1">
-          <div class="d-flex"><span>Нет</span><b-radio v-model="model.it_return" :value="false" :disabled="is_details"></b-radio></div>
+          <div class="d-flex"><span>Нет</span><b-radio v-model="model.it_return" :value="false" :disabled="!is_edit_mode"></b-radio></div>
         </div>
       </div>
       <div class="row mb-default" v-if="type === 'to_issue'">
         <div class="col-sm-3">Самостоятельно доставлю груз</div>
         <div class="col-sm-1">
-          <div class="d-flex"><b-checkbox v-model="model.self_delivery" :disabled="!is_edit_mode || is_details"></b-checkbox></div>
+          <div class="d-flex"><b-checkbox v-model="model.self_delivery" :disabled="!is_edit_mode"></b-checkbox></div>
         </div>
       </div>
       <div v-if="type === 'to_issue'" class="row mb-default d-flex align-items-center">
@@ -76,7 +76,7 @@
         <div class="col-sm-2">Примечание:</div>
         <b-textarea v-model="model.note" class="col-sm-10" :disabled="!is_edit_mode"></b-textarea>
       </div>
-      <div class="row mb-default" v-if="!model.it_return">
+      <div class="row mb-default" v-if="!model.it_return || is_details">
         <div class="col-sm-2">Список товаров:</div>
       </div>
       <products-table :is_edit_mode="is_edit_mode"
