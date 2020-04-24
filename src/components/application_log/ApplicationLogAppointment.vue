@@ -24,6 +24,9 @@
         <strong>Загрузка...</strong>
       </div>
     </template>
+    <template v-slot:cell(number)="data">
+      <span>{{ data.index + 1 }}</span>
+    </template>
     <template v-slot:cell(status)="data">
       <span class="badge status_badge"  :class="status_badge(data.value)">{{ data.value }}</span>
     </template>
@@ -63,6 +66,10 @@ export default {
       total_rows: 0,
       per_page: 20,
       fields: [
+        {
+          key: 'number',
+          label: ''
+        },
         {
           key: 'document_date',
           label: 'Дата создания',

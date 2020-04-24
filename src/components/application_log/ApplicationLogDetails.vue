@@ -4,6 +4,7 @@
     :is_edit_mode="is_edit_mode"
     :title="title"
     :item="item"
+    is_details
     :type="type">
       <template v-if="item.status" slot="status">
         <b-button squared class="default-cursor" :variant="status_button(item.status)">{{ item.status }}</b-button>

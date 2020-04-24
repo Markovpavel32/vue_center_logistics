@@ -15,7 +15,7 @@
         <div class="col-sm-3">
           <label class="d-flex align-items-center">
             <span class="mr-default">Дата заявки:</span>
-            <b-input class="col-sm-6" :value="model.document_date" readonly></b-input>
+            <b-input class="col-sm-6" :value="model.document_date" disabled></b-input>
           </label>
         </div>
         <div class="col-sm-4">
@@ -25,7 +25,7 @@
                      required
                      v-model="model.document_number"
                      placeholder="Укажите номер заявки"
-                     :readonly="!is_edit_mode"></b-input>
+                     :disabled="!is_edit_mode"></b-input>
           </label>
         </div>
         <div class="col-sm-5">
@@ -41,21 +41,21 @@
       <div class="row mb-default" v-if="type === 'appointment'">
         <div class="col-sm-3">Заявка является возвратом?</div>
         <div class="col-sm-1">
-          <div class="d-flex"><span>Да</span><b-radio v-model="model.it_return" :value="true"></b-radio></div>
+          <div class="d-flex"><span>Да</span><b-radio v-model="model.it_return" :value="true" :disabled="is_details"></b-radio></div>
         </div>
         <div class="col-sm-1">
-          <div class="d-flex"><span>Нет</span><b-radio v-model="model.it_return" :value="false"></b-radio></div>
+          <div class="d-flex"><span>Нет</span><b-radio v-model="model.it_return" :value="false" :disabled="is_details"></b-radio></div>
         </div>
       </div>
       <div class="row mb-default" v-if="type === 'to_issue'">
         <div class="col-sm-3">Самостоятельно доставлю груз</div>
         <div class="col-sm-1">
-          <div class="d-flex"><b-checkbox v-model="model.self_delivery" :disabled="!is_edit_mode"></b-checkbox></div>
+          <div class="d-flex"><b-checkbox v-model="model.self_delivery" :disabled="!is_edit_mode || is_details"></b-checkbox></div>
         </div>
       </div>
       <div v-if="type === 'to_issue'" class="row mb-default d-flex align-items-center">
         <div class="col-sm-2">Грузополучатель:</div>
-        <b-input v-if="!is_edit_mode" class="col-sm-6 pl-0" v-model="query" readonly/>
+        <b-input v-if="!is_edit_mode" class="col-sm-6 pl-0" v-model="query" disabled/>
         <vue-bootstrap-typeahead v-else class="col-sm-6 pl-0"
                                  v-model="query"
                                  :serializer="item => item.consignee_name"
@@ -76,11 +76,11 @@
         <div class="col-sm-2">Примечание:</div>
         <b-textarea v-model="model.note" class="col-sm-10" :disabled="!is_edit_mode"></b-textarea>
       </div>
-      <div class="row mb-default">
+      <div class="row mb-default" v-if="!model.it_return">
         <div class="col-sm-2">Список товаров:</div>
       </div>
       <products-table :is_edit_mode="is_edit_mode" @remove_product="remove_product" :model.sync="model" :products="products" :key="item && item.id"></products-table>
-      <div class="row justify-content-between">
+      <div class="row justify-content-between" v-if="!model.it_return">
         <div class="col-sm-2" >
           <b-button v-if="is_edit_mode" variant="primary" @click="modal_show = !modal_show" squared>Добавить товар</b-button>
         </div>
@@ -124,6 +124,10 @@ export default {
       required: false,
       type: Boolean,
       default: true
+    },
+    is_details: {
+      required: false,
+      type: Boolean
     }
   },
   data () {

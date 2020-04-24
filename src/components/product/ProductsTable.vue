@@ -6,8 +6,11 @@
     style="{background-color: transparent}"
     class="products_table"
   >
+    <template v-slot:cell(number)="data">
+      <span>{{ data.index + 1 }}</span>
+    </template>
     <template v-slot:cell(quantity)="data">
-      <b-input v-model="model.document_lines[data.index].quantity" :readonly="!is_edit_mode"></b-input>
+      <b-input v-model="model.document_lines[data.index].quantity" :disabled="!is_edit_mode"></b-input>
     </template>
     <template v-slot:cell(remove)="row">
       <i class="icon-remove clickable" @click="$emit('remove_product', row.index)"></i>
@@ -37,6 +40,10 @@ export default {
   data () {
     return {
       default_fields: [
+        {
+          label: '',
+          key: 'number'
+        },
         {
           key: 'vendor_code',
           label: 'Артикул',
