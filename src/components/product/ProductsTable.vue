@@ -1,11 +1,18 @@
 <template>
   <b-table
-    v-if="products.length"
+    v-if="products.length || is_details"
     :items="products"
+    :busy="is_products_loading"
     :fields="fields"
     style="{background-color: transparent}"
     class="products_table"
   >
+    <template v-slot:table-busy>
+      <div class="text-center text-danger my-2">
+        <b-spinner class="align-middle"></b-spinner>
+        <strong>Загрузка...</strong>
+      </div>
+    </template>
     <template v-slot:cell(number)="data">
       <span>{{ data.index + 1 }}</span>
     </template>
@@ -34,6 +41,14 @@ export default {
       required: true,
       type: Boolean,
       default: true
+    },
+    is_products_loading: {
+      required: true,
+      type: Boolean
+    },
+    is_details: {
+      required: true,
+      type: Boolean
     }
   },
 

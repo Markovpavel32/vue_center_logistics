@@ -79,7 +79,13 @@
       <div class="row mb-default" v-if="!model.it_return">
         <div class="col-sm-2">Список товаров:</div>
       </div>
-      <products-table :is_edit_mode="is_edit_mode" @remove_product="remove_product" :model.sync="model" :products="products" :key="item && item.id"></products-table>
+      <products-table :is_edit_mode="is_edit_mode"
+                      @remove_product="remove_product"
+                      :model.sync="model"
+                      :products="products"
+                      :is_details="is_details"
+                      :is_products_loading="is_products_loading"
+                      :key="item && item.id"></products-table>
       <div class="row justify-content-between" v-if="!model.it_return">
         <div class="col-sm-2" >
           <b-button v-if="is_edit_mode" variant="primary" @click="modal_show = !modal_show" squared>Добавить товар</b-button>
@@ -151,11 +157,12 @@ export default {
       products: [],
       modal_show: false,
       consignee_list: [],
-      query: ''
+      query: '',
+      is_products_loading: false
     }
   },
 
-  created () {
+  async created () {
     if (this.item) {
       this.model = {
         ...this.model,
@@ -173,7 +180,9 @@ export default {
         this.model.it_return = true
       }
 
-      new AjaxOperator(`/application_log/${this.type}/products`, this.$store, 'products')
+      this.is_products_loading = true
+
+      await new AjaxOperator(`/application_log/${this.type}/products`, this.$store, 'products')
         .get({
           params: {
             id: this.item.id
@@ -182,6 +191,7 @@ export default {
         .then(data => {
           this.products = data.result
           this.model.document_lines = data.result
+          this.is_products_loading = false
         })
     }
   },
