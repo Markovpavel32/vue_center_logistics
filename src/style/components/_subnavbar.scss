@@ -3,7 +3,7 @@
   /* negative offset = section padding */
   margin: 0 -30px;
   /* add back section padding value */
-  padding: 0.25rem 30px;
+  padding: 0.25rem 54px;
   background: #F6F5F3;
   border-bottom: 1px solid #E1E4E8;
   border-top: 1px solid #E1E4E8;
@@ -27,4 +27,16 @@
   background: #F6F5F3;
   border-bottom: 1px solid #E1E4E8;
   border-top: 1px solid #E1E4E8;
+}
+
+.sub_nav_bar__nav_item > a {
+  padding: 0 0 0 0;
+}
+
+.sub_nav_bar__nav_item:hover, .sub_nav_bar__nav_item > a:hover {
+  color: #757575
+}
+
+.sub_nav_bar__active_link > a {
+  color: #757575
 }

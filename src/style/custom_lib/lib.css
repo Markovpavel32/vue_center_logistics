@@ -1,5 +1,18 @@
-.btn {
-  border-radius: 0;
-}
+/* Error: $color: theme-color("primary") is not a color.
+ *     ,
+ * 164 | $link-hover-color:          darken($link-color, 15%) !default;
+ *     |                             ^^^^^^^^^^^^^^^^^^^^^^^^
+ *     '
+ *   _variables.scss 164:29  @import
+ *   lib.scss 1:9            root stylesheet */
 
-/*# sourceMappingURL=lib.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: $color: theme-color("primary") is not a color.\a     \2577 \a 164 \2502  $link-hover-color:          darken($link-color, 15%) !default;\a     \2502                              ^^^^^^^^^^^^^^^^^^^^^^^^\a     \2575 \a   _variables.scss 164:29  @import\a   lib.scss 1:9            root stylesheet';
+}

@@ -6,12 +6,8 @@
   color: $black;
 }
 
-.active-link > span {
-  border-bottom: 2px solid $red;
-}
-
 .default__layout__nav_item {
-  padding-bottom: $distance / 4;
+  padding-bottom: $distance / 2;
 }
 
 .application_log__service_cost_column {

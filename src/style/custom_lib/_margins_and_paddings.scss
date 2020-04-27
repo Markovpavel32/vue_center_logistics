@@ -299,5 +299,41 @@
 }
 
 .pl-xxxl {
-  padding-left: $distance * 8;
+  padding-bottom: $distance * 8;
+}
+
+.pb-xxs {
+  padding-bottom: $distance / 8;
+}
+
+.pb-xs {
+  padding-bottom: $distance / 4;
+}
+
+.pb-sm {
+  padding-bottom: $distance / 2;
+}
+
+.pb-default {
+  padding-bottom: $distance;
+}
+
+.pb-md {
+  padding-bottom: $distance * 3/2;
+}
+
+.pb-l {
+  padding-bottom: $distance * 2;
+}
+
+.pb-xl {
+  padding-bottom: $distance * 3;
+}
+
+.pb-xxl {
+  padding-bottom: $distance * 4;
+}
+
+.pb-xxxl {
+  padding-bottom: $distance * 8;
 }

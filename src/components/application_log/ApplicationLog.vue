@@ -1,5 +1,5 @@
 <template>
-  <div class="application_log  mt-xl">
+  <div class="application_log mt-l">
     <sub-nav-bar :sub_nav_bar_items="sub_nav_bar_items"></sub-nav-bar>
     <router-view></router-view>
   </div>

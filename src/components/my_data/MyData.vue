@@ -1,5 +1,5 @@
 <template>
-    <div class="my_data mt-xl">
+    <div class="my_data mt-l">
     <sub-nav-bar :sub_nav_bar_items="sub_nav_bar_items"></sub-nav-bar>
     <router-view></router-view>
   </div>

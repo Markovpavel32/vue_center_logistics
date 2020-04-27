@@ -12,6 +12,12 @@
   src: url(../assets/SFUIDISPLAY-REGULAR.OTF);
   /* Путь к файлу со шрифтом */
 }
+@font-face {
+  font-family: SFUI-Display-Semibold;
+  /* Гарнитура шрифта */
+  src: url(../assets/SFUIDISPLAY-SEMIBOLD.OTF);
+  /* Путь к файлу со шрифтом */
+}
 *,
 *::before,
 *::after {

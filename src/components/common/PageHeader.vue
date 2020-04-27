@@ -13,10 +13,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-.page_header__title {
-  font-weight: bold;
-  font-size: 20px;
-};
-</style>

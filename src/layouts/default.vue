@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-      <b-navbar class="mt-l">
+      <b-navbar class="mt-md">
         <b-navbar-brand>
           <img src="../assets/MainLogo.svg" width="270" height="30"/>
         </b-navbar-brand>
@@ -12,39 +12,51 @@
         </b-navbar-nav>
       </b-navbar>
       <b-nav fill class="mt-sm">
-        <b-nav-item :to="{name: 'application_log' }" active-class="active-link" link-classes="nav-link" class="">
+        <b-nav-item :to="{name: 'application_log' }" active-class="default__active_link" link-classes="default__nav_link" class="">
           <span class="default__layout__nav_item">
-            <img src="../assets/application_log.svg" />
+            <span class="pr-xs pb-xs">
+              <img src="../assets/application_log.svg" height="18" width="18"/>
+            </span>
             {{'Журнал заявок'}}
           </span>
         </b-nav-item>
-        <b-nav-item :to="{name: 'my_data' }" link-classes="nav-link" active-class="active-link">
+        <b-nav-item :to="{name: 'my_data' }" link-classes="default__nav_link" active-class="default__active_link">
           <span class="default__layout__nav_item">
-            <img src="../assets/my_data.png" height="22" width="22"/>
+            <span class="pr-xs pb-xs">
+              <img src="../assets/my_data.png" height="18" width="18"/>
+            </span>
             {{'Мои данные'}}
           </span>
         </b-nav-item>
-        <b-nav-item :to="{name: 'documents_log' }" link-classes="nav-link" active-class="active-link">
+        <b-nav-item :to="{name: 'documents_log' }" link-classes="default__nav_link" active-class="default__active_link">
           <span class="default__layout__nav_item">
-            <img src="../assets/documents_log.png" height="22" width="22"/>
+            <span class="pr-xs pb-xs">
+              <img src="../assets/documents_log.png" height="18" width="18" />
+            </span>
             {{'Журнал документов'}}
           </span>
         </b-nav-item>
-        <b-nav-item :to="{name: 'statistics' }" link-classes="nav-link" active-class="active-link">
+        <b-nav-item :to="{name: 'statistics' }" link-classes="default__nav_link" active-class="default__active_link">
           <span class="default__layout__nav_item">
-            <img src="../assets/statistics.png" height="22" width="22"/>
+            <span class="pr-xs pb-xs">
+              <img src="../assets/statistics.png" height="18" width="18"/>
+            </span>
             {{'Статистика и отчеты'}}
           </span>
         </b-nav-item>
-        <b-nav-item :to="{name: 'disputes' }" link-classes="nav-link" active-class="active-link">
+        <b-nav-item :to="{name: 'disputes' }" link-classes="default__nav_link" active-class="default__active_link">
           <span class="default__layout__nav_item">
-            <img src="../assets/disputes.png" height="22" width="22"/>
+            <span class="pr-xs pb-xs">
+              <img src="../assets/disputes.png" height="18" width="18"/>
+            </span>
             {{'Споры'}}
           </span>
         </b-nav-item>
-        <b-nav-item :to="{name: 'payment' }" link-classes="nav-link" active-class="active-link">
+        <b-nav-item :to="{name: 'payment' }" link-classes="default__nav_link" active-class="default__active_link">
           <span class="default__layout__nav_item">
-            <img src="../assets/payment.png" height="22" width="22"/>
+            <span class="pr-xs pb-xs">
+              <img src="../assets/payment.png" height="18" width="18" />
+            </span>
             {{'Оплата'}}
           </span>
         </b-nav-item>
