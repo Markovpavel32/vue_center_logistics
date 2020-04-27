@@ -10625,6 +10625,7 @@ a .icon-rotate-90:before, a .icon-rotate-180:before, a .icon-rotate-270:before, 
 
 .sub_nav_bar__nav_item > a {
   padding: 0 0 0 0;
+  font-size: 13px;
 }
 
 .sub_nav_bar__nav_item:hover, .sub_nav_bar__nav_item > a:hover {

@@ -31,6 +31,7 @@
 
 .sub_nav_bar__nav_item > a {
   padding: 0 0 0 0;
+  font-size: 13px;
 }
 
 .sub_nav_bar__nav_item:hover, .sub_nav_bar__nav_item > a:hover {
@@ -38,5 +39,5 @@
 }
 
 .sub_nav_bar__active_link > a {
-  color: #757575
+  color: #757575;
 }
