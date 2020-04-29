@@ -48,7 +48,7 @@ import { AjaxOperator } from '../../lib/axios'
 import moment from 'moment'
 import debounce from 'lodash.debounce'
 import { STATUS_BADGES } from './CONSTANTS'
-import ApplicationCreate from './ApplicationCreate'
+import ApplicationCreate from '../application/ApplicationCreate'
 import ApplicationLogDetails from './ApplicationLogDetails'
 import PageHeader from '../common/PageHeader'
 

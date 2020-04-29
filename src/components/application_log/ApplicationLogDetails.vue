@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import ApplicationCreate from './ApplicationCreate'
+import ApplicationCreate from '../application/ApplicationCreate'
 import { STATUS_BUTTONS } from './CONSTANTS'
 
 export default {

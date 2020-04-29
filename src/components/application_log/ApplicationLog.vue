@@ -23,7 +23,7 @@ export default {
       },
       {
         route: 'application_log_delivery',
-        title: 'На доставку'
+        title: 'На грузоперевозку'
       }]
     }
   }

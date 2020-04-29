@@ -26,6 +26,7 @@
       </template>
     </b-table>
     <b-pagination v-model="current_page"
+                  v-if="products.length || is_details"
                   :total-rows="total_rows"
                   :per-page="per_page"
                   aria-controls="products_table"></b-pagination>

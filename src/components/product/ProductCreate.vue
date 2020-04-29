@@ -2,7 +2,6 @@
   <div>
     <b-card bg-variant="light">
       <i @click="$emit('close', false)" class="icon-remove ml-auto d-flex flex-row-reverse clickable"></i>
-      <div>{{ object }}</div>
       <div class="d-flex justify-content-between">
         <b-card-title>
           <span class="mr-default">{{ title }}</span>
@@ -128,8 +127,7 @@ export default {
         'Блок': 'блока',
         'Короб': 'короба',
         'Паллет': 'паллета'
-      },
-      object: [1, 2, 3]
+      }
     }
   }
 }
