@@ -19,7 +19,7 @@
       </div>
       <div class="col-sm-5">
         <label class="d-flex align-items-center">
-          <span class="mr-default">Дата доставки:</span>
+          <span class="mr-default">Плановая дата выдачи:</span>
           <date-picker v-model="model.scheduled_date"
                        class="form-control"
                        :config="datepicker_options"
@@ -28,6 +28,12 @@
       </div>
     </div>
     <c-radio-row :model="model" :fields="radio_fields" title="Заявка является возвратом?" :disabled="!is_edit_mode"></c-radio-row>
+    <div v-if="model.it_return" class="row mb-default">
+      <div class="d-flex align-items-center col-sm-12">
+        <span class="mr-default">Откуда осуществляется возврат:</span>
+        <b-input class="col-sm-8" :value="model.return_adsress"></b-input>
+      </div>
+    </div>
     <div class="row mb-default">
       <div class="col-sm-2">Примечание:</div>
       <b-textarea v-model="model.note" class="col-sm-10" :disabled="!is_edit_mode"></b-textarea>
