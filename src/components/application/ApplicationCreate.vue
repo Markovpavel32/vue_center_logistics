@@ -13,7 +13,7 @@
       </div>
       <application-appointment-create v-if="type === 'appointment'" :model="model" :is_edit_mode="is_edit_mode"></application-appointment-create>
       <application-to-issue-create v-if="type === 'to_issue'" :model="model" :is_edit_mode="is_edit_mode"></application-to-issue-create>
-      <application-delivery-create :model="model"></application-delivery-create>
+      <application-delivery-create v-if="type === 'delivery'" :model="model"></application-delivery-create>
       <products-table v-if="type !== 'delivery'"
                       :is_edit_mode="is_edit_mode"
                       @remove_product="remove_product"
