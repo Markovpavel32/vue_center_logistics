@@ -19,7 +19,7 @@
         <span>{{ get_row_number(data.index) }}</span>
       </template>
       <template v-slot:cell(quantity)="data">
-        <b-input v-model="model.document_lines[data.index].quantity" :disabled="!is_edit_mode"></b-input>
+        <b-input v-model="model.document_lines[data.index].quantity" :plaintext="!is_edit_mode" :disabled="!is_edit_mode"></b-input>
       </template>
       <template v-slot:cell(remove)="row">
         <i class="icon-remove clickable" @click="$emit('remove_product', row.index)"></i>

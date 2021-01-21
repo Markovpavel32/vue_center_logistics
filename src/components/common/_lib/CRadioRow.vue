@@ -3,7 +3,7 @@
     <div class="row mb-default" >
       <div class="col-sm-3">{{ title }}</div>
       <div class="col-sm-1" v-for="field in fields" :key="field.value">
-        <div class="d-flex"><span>{{ field.label }}</span><b-radio v-model="model[field.property]" :value="field.value" :disabled="disabled"></b-radio></div>
+        <div class="d-flex"><span>{{ field.label }}</span><b-radio v-model="model[field.property]" :value="field.value" :disabled="disabled" :plaintext="disabled"></b-radio></div>
       </div>
     </div>
   </div>

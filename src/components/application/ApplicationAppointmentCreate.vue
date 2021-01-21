@@ -4,7 +4,7 @@
       <div class="col-sm-3">
         <label class="d-flex align-items-center">
           <span class="mr-default">Дата заявки:</span>
-          <b-input class="col-sm-6" :value="model.document_date" disabled></b-input>
+          <b-input class="col-sm-6" :value="model.document_date" disabled :plaintext="!is_edit_mode"></b-input>
         </label>
       </div>
       <div class="col-sm-4">
@@ -14,15 +14,23 @@
                    required
                    v-model="model.document_number"
                    placeholder="Укажите номер заявки"
+                   :plaintext="!is_edit_mode"
                    :disabled="!is_edit_mode"></b-input>
         </label>
       </div>
       <div class="col-sm-5">
         <label class="d-flex align-items-center">
           <span class="mr-default">Плановая дата выдачи:</span>
-          <date-picker v-model="model.scheduled_date"
+          <b-input
+            v-if="!is_edit_mode"
+            :plaintext="!is_edit_mode"
+            :disabled="!is_edit_mode"
+            :value="model.scheduled_date"></b-input>
+          <date-picker v-else
+                       v-model="model.scheduled_date"
                        class="form-control"
                        :config="datepicker_options"
+                       :plaintext="!is_edit_mode"
                        :disabled="!is_edit_mode"></date-picker>
         </label>
       </div>
@@ -31,12 +39,12 @@
     <div v-if="model.it_return" class="row mb-default">
       <div class="d-flex align-items-center col-sm-12">
         <span class="mr-default">Откуда осуществляется возврат:</span>
-        <b-input class="col-sm-8" :value="model.return_adsress"></b-input>
+        <b-input class="col-sm-8" :value="model.return_adsress" :plaintext="!is_edit_mode"></b-input>
       </div>
     </div>
     <div class="row mb-default">
       <div class="col-sm-2">Примечание:</div>
-      <b-textarea v-model="model.note" class="col-sm-10" :disabled="!is_edit_mode"></b-textarea>
+      <b-textarea v-model="model.note" class="col-sm-10" :disabled="!is_edit_mode" :plaintext="!is_edit_mode"></b-textarea>
     </div>
   </div>
 </template>
